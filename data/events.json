@@ -1,0 +1,32 @@
+[
+  {
+    "id": "E001",
+    "title": "Intro to Web Dev Workshop",
+    "type": "workshop",
+    "date": "2025-11-21 10:00",
+    "short": "Learn HTML, CSS, and JS in this beginner-friendly workshop.",
+    "description": "A hands-on workshop covering fundamentals of modern web development. Bring your laptop.",
+    "capacity": 50,
+    "image": "assets/img/event.jpg"
+  },
+  {
+    "id": "E002",
+    "title": "Campus Hackathon 48h",
+    "type": "hackathon",
+    "date": "2025-12-05 09:00",
+    "short": "Build and ship a project in 48 hours.",
+    "description": "Teams of up to 4 will build prototypes based on themes. Prizes for winners.",
+    "capacity": 200,
+    "image": "assets/img/event.jpg"
+  },
+  {
+    "id": "E003",
+    "title": "AI & ML Seminar",
+    "type": "seminar",
+    "date": "2025-11-28 15:00",
+    "short": "Guest talk on AI careers and projects.",
+    "description": "Industry guest presents on how to start AI projects and build portfolios.",
+    "capacity": 150,
+    "image": "assets/img/event.jpg"
+  }
+]

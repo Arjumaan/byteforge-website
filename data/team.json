@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Mr. M.Arjumaan",
+    "role": "President",
+    "image": "assets/img/president.jpg",
+    "email": "arjumaanm.bcy24@rathinam.in",
+    "linkedin": "#",
+    "github": "#"
+  },
+  {
+    "name": "Nithin Raj",
+    "role": "Vice President",
+    "image": "assets/img/leader1.jpg",
+    "email": "nithin.raj@byteforge.com",
+    "linkedin": "#",
+    "github": "#"
+  },
+  {
+    "name": "Harini K",
+    "role": "Secretary",
+    "image": "assets/img/leader1.jpg",
+    "email": "harini.k@byteforge.com",
+    "linkedin": "#",
+    "github": "#"
+  },
+  {
+    "name": "Dr. N.Jeyakkannan",
+    "role": "Faculty Team Leader",
+    "image": "assets/img/leader1.jpg",
+    "email": "jeyakkannan.bio@rathinam.in",
+    "linkedin": "#",
+    "github": "#"
+  },
+  {
+    "name": "Sneha Priya",
+    "role": "Faculty Coordinator 1",
+    "image": "assets/img/leader1.jpg",
+    "email": "sneha.priya@byteforge.com",
+    "linkedin": "#",
+    "github": "#"
+  },
+  {
+    "name": "Vikram Das",
+    "role": "Faculty Coordinator 2",
+    "image": "assets/img/leader1.jpg",
+    "email": "vikram.das@byteforge.com",
+    "linkedin": "#",
+    "github": "#"
+  }
+]
