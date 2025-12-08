@@ -487,16 +487,26 @@ try {
     $pdf->Cell(90, 8, 'Date: ' . ($data['submission_date'] ? $data['submission_date'] : date('Y-m-d')), 0, 0);
     $pdf->Cell(90, 8, 'Signature', 'T', 1, 'C');
 
-    $pdf->Ln(24);
-    $pdf->SetDrawColor(0);
+    $pdf->Ln(30); // Add spacing before signatures
     $pdf->SetFont('helvetica', 'B', 10);
-    $pdf->Cell(63, 6, 'Tutor Sign', 0, 0, 'C');
-    $pdf->Cell(63, 8, '', 'T', 0, 'C');
-    $pdf->Cell(63, 6, 'HoD Sign', 0, 0, 'C');
-    $pdf->Cell(64, 8, '', 'T', 1, 'C');
-    $pdf->Cell(64, 6, 'Dean Sign', 0, 1, 'C');
-    $pdf->Cell(64, 8, '', 'T', 1, 'C');
+    $pdf->SetDrawColor(0);
 
+    // Column width for 3 equal sections
+    $colWidth = 63.5;
+
+    // 1) Draw the TOP LINES (above signatures)
+    $pdf->Cell($colWidth, 8, '', 'T', 0, 'C');  // Tutor line
+    $pdf->Cell($colWidth, 8, '', 'T', 0, 'C');  // HoD line
+    $pdf->Cell($colWidth, 8, '', 'T', 1, 'C');  // Dean line (end row)
+
+    // Add spacing between line and label
+    $pdf->Ln(2);
+
+    // 2) Signature LABELS perfectly aligned
+    $pdf->Cell($colWidth, 6, 'Tutor Sign', 0, 0, 'C');
+    $pdf->Cell($colWidth, 6, 'HoD Sign', 0, 0, 'C');
+    $pdf->Cell($colWidth, 6, 'Dean Sign', 0, 1, 'C');
+    
     $safeName = preg_replace('/[^a-zA-Z0-9]/', '', $data['full_name']);
     $safeReg = preg_replace('/[^a-zA-Z0-9]/', '', $data['reg_number']);
     if (!$safeName) $safeName = "Unknown";
