@@ -34,7 +34,7 @@ try {
     <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
 </head>
 
 
@@ -283,8 +283,14 @@ try {
             <h2>Meet Our Core Leaders</h2>
             <p class="team-sub">The driving minds behind ByteForge’s innovation and success.</p>
 
+            <?php 
+            $students = array_slice($team, 0, 3);
+            $faculty = array_slice($team, 3);
+            ?>
+            
+            <!-- Students Team -->
             <div class="team-grid">
-                <?php foreach ($team as $member): ?>
+                <?php foreach ($students as $member): ?>
                     <div class="team-card">
                         <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
                         <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
@@ -296,10 +302,29 @@ try {
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <?php if (empty($team)): ?>
-                    <p class="muted">No team members yet. Add team data in <code>/data/team.json</code>.</p>
-                <?php endif; ?>
             </div>
+
+            <!-- Teachers/Faculty Team -->
+             <div class="team-center">
+                <?php foreach ($faculty as $member): ?>
+                    <div class="team-card">
+                        <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
+                        <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
+                        <p><?= htmlspecialchars($member['role'] ?? '') ?></p>
+                        <p class="team-email"><a href="mailto:<?= htmlspecialchars($member['email'] ?? '') ?>"><?= htmlspecialchars($member['email'] ?? '') ?></a></p>
+                        <div class="team-links">
+                            <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                            <a href="<?= htmlspecialchars($member['github'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <?php if (empty($team)): ?>
+                <div class="team-grid">
+                    <p class="muted">No team members yet. Add team data in <code>/data/team.json</code>.</p>
+                </div>
+            <?php endif; ?>
         </section>
 
         <!-- JOIN -->

@@ -25,7 +25,7 @@
   },
   {
     "name": "Dr. N.Jeyakkannan",
-    "role": "Faculty Team Leader",
+    "role": "Faculty Leader",
     "image": "assets/img/leader1.jpg",
     "email": "jeyakkannan.bio@rathinam.in",
     "linkedin": "#",
@@ -33,17 +33,9 @@
   },
   {
     "name": "Sneha Priya",
-    "role": "Faculty Coordinator 1",
+    "role": "Faculty Coordinator",
     "image": "assets/img/leader1.jpg",
     "email": "sneha.priya@byteforge.com",
-    "linkedin": "#",
-    "github": "#"
-  },
-  {
-    "name": "Vikram Das",
-    "role": "Faculty Coordinator 2",
-    "image": "assets/img/leader1.jpg",
-    "email": "vikram.das@byteforge.com",
     "linkedin": "#",
     "github": "#"
   }
