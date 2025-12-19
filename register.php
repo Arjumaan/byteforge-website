@@ -6,39 +6,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>ByteForge Club - Member Registration Form</title>
     <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* BRAND COLORS (Based on ByteForge Logo) */
-            --primary-color: #1FA0B5;
-            /* Teal core brand */
-            --primary-hover: #17879A;
-            /* Darker teal */
-            --primary-active: #0E6B7A;
-            /* Strong pressed teal */
-
-            --accent-purple: #7A1ED8;
-            /* ByteForge Purple Accent */
-            --accent-blue: #243A8F;
-            /* ByteForge Indigo */
-
+            /* DARK MODE VARS (ByteForge Theme) */
+            --primary-color: #7A1ED8; /* Purple primary */
+            --primary-hover: #9d4edd;
+            --accent-cyan: #1FA0B5;   /* ByteForge Cyan */
+            
+            --bg-color: #0f0524;      /* Deep dark bg */
+            --surface-color: rgba(30, 41, 59, 0.7); /* Improved glass opacity for readability */
+            
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0; /* Lighter secondary text for better contrast */
+            
+            --border-color: rgba(162, 90, 255, 0.3);
+            --focus-ring: rgba(31, 160, 181, 0.5);
+            
             --success-color: #10b981;
             --error-color: #ef4444;
-            --warning-color: #f59e0b;
-
-            /* LIGHT MODE BACKGROUND (Logo has light canvas) */
-            --bg-color: #F4F6F9;
-            /* Matches logo background */
-            --surface-color: #ffffff;
-
-            /* TEXT COLORS */
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-
-            /* BORDERS + FOCUS */
-            --border-color: #d8e0ea;
-            --focus-ring: rgba(31, 160, 181, 0.35);
-            /* tinted teal glow */
+            
+            --primary-gradient: linear-gradient(135deg, #1FA0B5 0%, #7A1ED8 100%);
         }
 
         * {
@@ -48,323 +37,391 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(122, 30, 216, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(31, 160, 181, 0.2) 0%, transparent 40%);
             color: var(--text-primary);
-            line-height: 1.6;
-            padding: 20px;
+            padding: 40px 20px;
+            overflow-x: hidden;
         }
 
+        /* Glassmorphism Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: var(--surface-color);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            z-index: 10;
         }
 
-        /* ======================== HEADER ======================== */
-
+        /* Header */
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 20px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
         }
 
         .header h1 {
-            color: var(--accent-blue);
-            /* Blue from logo */
-            font-size: 28px;
-            margin-bottom: 5px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
             text-transform: uppercase;
         }
 
         .header h3 {
-            font-size: 16px;
-            color: var(--accent-purple);
+            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 5px;
-            font-weight: 600;
         }
 
         .header p {
             color: var(--text-secondary);
-            font-size: 14px;
             font-style: italic;
+            opacity: 0.9;
         }
 
-        /* ======================== FORM SECTIONS ======================== */
-
+        /* Form Sections */
         .form-section {
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px dashed var(--border-color);
         }
 
         .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent-cyan);
             display: flex;
             align-items: center;
-            gap: 10px;
+            background: linear-gradient(90deg, rgba(31,160,181,0.1) 0%, transparent 100%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .sector-label {
+            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* ======================== GRID SYSTEM ======================== */
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-row.full {
-            grid-template-columns: 1fr;
-        }
-
-        .form-row.three-col {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        /* ======================== INPUTS ======================== */
-
+        /* Inputs & Labels */
         .form-group {
             display: flex;
             flex-direction: column;
+            margin-bottom: 20px;
         }
 
         label {
-            font-weight: 500;
+            color: var(--text-secondary);
             margin-bottom: 8px;
-            color: var(--text-primary);
-            font-size: 14px;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        label.required::after {
-            content: " *";
-            color: var(--error-color);
+        label.required::after { content: " *"; color: var(--accent-cyan); }
+
+        input, select, textarea {
+            background: rgba(15, 23, 42, 0.6) !important;
+            border: 1px solid var(--border-color) !important;
+            color: #fff !important;
+            padding: 14px 16px;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        input[type="date"],
-        textarea,
-        select {
-            padding: 10px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            font-family: inherit;
-            background: #f9fafb;
-            transition: all 0.25s ease;
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.4);
         }
 
-        input:focus,
-        textarea:focus,
-        select:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
-            background: #fff;
-            box-shadow: 0 0 0 3px var(--focus-ring);
+            border-color: var(--accent-cyan) !important;
+            box-shadow: 0 0 0 3px rgba(31,160,181,0.2) !important;
+            background: rgba(15, 23, 42, 0.9) !important;
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
+        /* Grid Layout */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 10px; }
+        .form-row.full { grid-template-columns: 1fr; }
+        .form-row.three-col { grid-template-columns: repeat(3, 1fr); }
 
-        /* ======================== CHECKBOX + RADIO ======================== */
-
-        .checkbox-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .checkbox-item,
-        .radio-item {
-            display: flex;
-            gap: 8px;
-            align-items: center;
+        /* Custom Checkbox/Radio */
+        .checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .radio-group { display: flex; gap: 20px; flex-wrap: wrap; }
+        
+        .checkbox-item, .radio-item {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
             cursor: pointer;
         }
 
-        .checkbox-item input,
-        .radio-item input {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--primary-color);
+        .checkbox-item:hover, .radio-item:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(31,160,181,0.15);
         }
-
+        
+        /* Increase click target for inputs inside label wrapper or next to it */
         .checkbox-label {
-            font-size: 14px;
             cursor: pointer;
-            user-select: none;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
         }
 
-        /* ======================== BUTTONS ======================== */
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            justify-content: center;
-        }
-
-        button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
+        input[type="checkbox"], input[type="radio"] {
+            accent-color: var(--accent-cyan);
+            width: 20px; height: 20px;
+            margin: 0;
             cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
+        /* Buttons */
         .btn-submit {
-            background-color: var(--primary-color);
+            background: var(--primary-gradient);
             color: #fff;
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(122,30,216,0.3);
+            text-transform: uppercase;
         }
 
         .btn-submit:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(31, 160, 181, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(122,30,216,0.5);
+            background: linear-gradient(135deg, #24b8d1 0%, #8b2df0 100%);
         }
 
         .btn-reset {
-            background: #e2e8f0;
-            color: var(--text-primary);
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #ccc;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 600;
         }
 
-        /* ======================== DECLARATION BOX ======================== */
-
-        .declaration {
-            background: #e8faff;
-            border-left: 4px solid var(--primary-color);
-            padding: 18px;
-            border-radius: 6px;
+        .btn-reset:hover {
+            border-color: #fff;
+            color: #fff;
+            background: rgba(255,255,255,0.05);
         }
 
-        .declaration-text {
-            font-size: 13px;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            line-height: 1.6;
-            text-align: justify;
+        /* Declaration & Status */
+        .declaration { background: rgba(31,160,181,0.1); border-left-color: var(--accent-cyan); color: #e2e8f0; padding: 20px; }
+        
+        .success-message { 
+            background: rgba(16,185,129,0.15); 
+            color: #34d399; 
+            border: 1px solid #059669; 
+            padding: 20px; 
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            display: none; /* Hidden by default */
+            text-align: center;
         }
 
-        /* ======================== PHOTO PREVIEW ======================== */
-
-        .photo-preview img {
-            max-width: 150px;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 5px;
-        }
-
-        /* ======================== MESSAGES ======================== */
-
-        .success-message {
-            background: #d1fae5;
-            color: #065f46;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid var(--success-color);
-            display: none;
-        }
-
-        .error-message {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid var(--error-color);
-            display: none;
-        }
-
-        /* ======================== RESPONSIVE ======================== */
-
-        @media (max-width:768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .form-row,
-            .form-row.three-col,
-            .rating-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .checkbox-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-        }
-
-        /* BYTEFORGE ANCHOR BUTTON (matches Submit Registration style) */
-        /* Center wrapper */
-        .center-container {
+        /* Button Updates */
+        .button-group {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
-
-        /* Long ByteForge anchor button */
-        .btn-link-primary.long {
+        
+        .btn-submit, .btn-reset, .btn-back-top {
+            padding: 16px 40px;
+            border-radius: 4px; /* Slightly techier */
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             display: inline-flex;
             align-items: center;
+            gap: 10px;
             justify-content: center;
+            min-width: 220px;
+            position: relative;
+            overflow: hidden;
+        }
 
-            width: 720px;
-            /* Adjust this width to match the Submit + Reset row */
-            padding: 14px 20px;
+        /* Techy cut corners or borders */
+        .btn-submit {
+            background: var(--primary-color);
+            color: white;
+            border: 1px solid var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(122, 30, 216, 0.3);
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        
+        .btn-submit:hover::before {
+            transform: translateX(100%);
+        }
 
-            background: linear-gradient(135deg, #1FA0B5, #17879A, #1FA0B5);
-            background-size: 200% 200%;
-            color: #ffffff;
+        .btn-submit:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 0 25px rgba(122, 30, 216, 0.6);
+            transform: translateY(-2px);
+        }
 
-            border-radius: 10px;
+        .btn-reset {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-reset:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: white;
+        }
+
+        .btn-back-top {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            display: flex; /* Ensure block-level behavior for margin:auto centering */
+            width: 100%;
+            max-width: 460px; /* Approx width of 2 buttons + gap */
+            margin: 10px auto 0 auto; /* Centered block if needed, though inline-flex helps */
+        }
+
+        .btn-back-top:hover {
+            background: rgba(31, 160, 181, 0.15);
+            box-shadow: 0 0 20px rgba(31, 160, 181, 0.3);
+            text-shadow: 0 0 5px var(--accent-cyan);
+        }
+
+        /* Header Home Button */
+        .header-home-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--accent-cyan);
+            padding: 10px 20px;
+            border-radius: 4px;
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 700;
-            font-size: 15px;
-
-            box-shadow:
-                0 4px 14px rgba(31, 160, 181, 0.3),
-                0 1px 4px rgba(0, 0, 0, 0.08);
-
-            transition: all 0.35s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--accent-cyan);
+            text-transform: uppercase;
         }
 
-        .btn-link-primary.long:hover {
-            background-position: 100% 0%;
-            transform: translateY(-3px);
-            box-shadow:
-                0 8px 22px rgba(31, 160, 181, 0.4),
-                0 12px 30px rgba(122, 30, 216, 0.25);
+        .header-home-btn:hover {
+            background: var(--accent-cyan);
+            color: #0f0524;
+            box-shadow: 0 0 20px rgba(31,160,181,0.6);
+        }
+        
+        .error-message { 
+            background: rgba(239,68,68,0.15); 
+            color: #fca5a5; 
+            border: 1px solid #dc2626; 
+            padding: 20px; 
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            display: none; /* Hidden by default */
+            text-align: center;
         }
 
-        .btn-link-primary.long:active {
-            transform: scale(0.97);
+        /* Responsive */
+        @media(max-width: 768px) {
+            .container { padding: 20px; margin-top: 20px; }
+            .form-row, .form-row.three-col, .checkbox-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2rem; }
+            .btn-submit { width: 100%; margin-bottom: 10px; }
+            .btn-reset { width: 100%; }
         }
+
+        /* === GLOBAL ASSETS (Cursor, Preloader) === */
+        /* Custom Cursor */
+        .cursor-dot, .cursor-outline {
+            position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
+            border-radius: 50%; z-index: 9999; pointer-events: none;
+        }
+        .cursor-dot { width: 5px; height: 5px; background: var(--accent-cyan); z-index: 10000; }
+        .cursor-outline { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.5); transition: transform 0.2s; }
+        .cursor-hover { transform: translate(-50%, -50%) scale(1.5); background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050510; z-index: 99999; display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.5s;
+        }
+        .loader-circle {
+            width: 50px; height: 50px; border: 3px solid rgba(162,90,255,0.2);
+            border-top-color: var(--accent-cyan); border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text">BYTE FORGE</div>
+        </div>
+    </div>
+
     <div class="container">
+        <!-- Home Button -->
+        <a href="index.php" class="header-home-btn">
+            <i class="fas fa-home"></i> Home
+        </a>
+
         <div class="header">
             <h3>RAISE SMART | RATHINAM</h3>
             <h1>ByteForge Club</h1>
@@ -441,7 +498,7 @@
 
                 <div class="sector-label">Technical Domains</div>
 
-                <label style="margin-top: 10px; display:block; color: var(--primary-color);">Sector 1: Core Development & Innovation</label>
+                <label class="sector-label">Sector 1: Core Development & Innovation</label>
                 <div class="checkbox-grid">
                     <div class="checkbox-item"><input type="checkbox" name="techDomains[]" value="Web Development"><label class="checkbox-label">Web Development</label></div>
                     <div class="checkbox-item"><input type="checkbox" name="techDomains[]" value="App Development"><label class="checkbox-label">App Development</label></div>
@@ -453,7 +510,7 @@
                     <div class="checkbox-item"><input type="checkbox" name="techDomains[]" value="UI/UX"><label class="checkbox-label">UI/UX Design</label></div>
                 </div>
 
-                <label style="margin-top: 20px; display:block; color: var(--primary-color);">Sector 2: Advanced Technology & Security</label>
+                <label class="sector-label">Sector 2: Advanced Technology & Security</label>
                 <div class="checkbox-grid">
                     <div class="checkbox-item"><input type="checkbox" name="techDomains[]" value="Cloud Computing"><label class="checkbox-label">Cloud Computing</label></div>
                     <div class="checkbox-item"><input type="checkbox" name="techDomains[]" value="Cybersecurity"><label class="checkbox-label">Cybersecurity / Ethical Hacking</label></div>
@@ -1076,15 +1133,17 @@
             </div>
 
             <div class="button-group">
-                <button type="submit" class="btn-submit">📤 Submit Registration</button>
-                <button type="reset" class="btn-reset">🔄 Reset Form</button>
+                <button type="submit" class="btn-submit">Submit Registration <i class="fas fa-paper-plane"></i></button>
+                <button type="reset" class="btn-reset">Reset Form <i class="fas fa-undo"></i></button>
             </div>
-            <div class="center-container">
-                <a href="index.php" class="btn-link-primary long"> Back to Home Page 🏡 </a>
+            
+            <div class="center-container" style="margin-top: 10px;">
+                <button type="button" class="btn-back-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    Back to Top <i class="fas fa-arrow-up"></i>
+                </button>
             </div>
-        </form>
-    </div>
 
+    <script src="assets/js/main.js?v=1.5"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 1. CACHED ELEMENTS
@@ -1205,9 +1264,9 @@
                         // Skip radio/checkbox groups for simple validation logic
                         if (field.type !== 'radio' && field.type !== 'checkbox' && !field.value.trim()) {
                             isValid = false;
-                            field.style.borderColor = 'red';
+                            field.style.borderColor = 'var(--error-color, red)';
                         } else {
-                            field.style.borderColor = '#e2e8f0'; // Reset border
+                            field.style.borderColor = ''; // Reset to default CSS
                         }
                     });
 

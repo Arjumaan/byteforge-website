@@ -34,12 +34,13 @@ try {
     <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
 </head>
 
 
 
 <body>
+    
     <!-- Background SVG Animations -->
     <div class="background-svg-animations">
         <!-- Coding Symbols -->
@@ -148,11 +149,8 @@ try {
         <section id="home" class="hero">
             <div class="hero-inner">
                 <div class="hero-text">
-                    <p class="motto">ByteForge ~ FORGING EVERY BYTE OF CODE TO CREATION</p>
-                    <p class="lead">We are ByteForge, a thriving student community which is committed to using technology to build and learn.
-                        Our goal is to give participants practical experience so they can develop their skills, work together on real-world projects, and get ready for careers in hardware and software engineering.
-                        We focus on everything from web development and artificial intelligence to embedded systems and robotics, emphasizing peer-to-peer learning, inclusive collaboration,
-                        and a "learning-by-doing" approach.</p>
+                    <p class="motto typing-cursor" id="typingMotto"></p>
+<p class="lead" id="heroLead" data-text="We are ByteForge—where code meets creation. We bridge the gap between academic theory and industry reality through hands-on innovation. From AI and Robotics to Full-Stack Engineering, we empower you to build real-world projects, collaborate with peers, and forge your future in technology. Don't just learn it. Build it."></p>
                     <div class="hero-cta">
                         <a href="#join" class="btn btn-primary">Join ByteForge</a>
                         <a href="#about" class="btn btn-outline">Learn More</a>
@@ -165,26 +163,48 @@ try {
                         <img src="assets/img/BFL.jpg" alt="ByteForge logo small" aria-hidden="true">
                     </div>
                 </div>
+                
+                <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section id="about" class="section about">
             <div class="container">
-                <h2 style="color: white;">About ByteForge</h2>
-                <div class="about-text">
-                    <p>We are ByteForge, a thriving student community which is committed to using technology to build and learn. Our goal is to give participants practical experience so they can develop their skills, work together on real-world projects, and get ready for careers in hardware and software engineering.
-                        We focus on everything from web development and artificial intelligence to embedded systems and robotics, emphasizing peer-to-peer learning, inclusive collaboration,
-                        and a "learning-by-doing" approach. </p>
-                    <p>We are ByteForge, a thriving student community which is committed to using technology to build and learn. Our goal is to give participants practical experience so they can develop their skills, work together on real-world projects, and get ready for careers in hardware and software engineering.
-                        We focus on everything from web development and artificial intelligence to embedded systems and robotics, emphasizing peer-to-peer learning, inclusive collaboration,
-                        and a "learning-by-doing" approach. </p>
-                    <p>We are ByteForge, a thriving student community which is committed to using technology to build and learn. Our goal is to give participants practical experience so they can develop their skills, work together on real-world projects, and get ready for careers in hardware and software engineering.
-                        We focus on everything from web development and artificial intelligence to embedded systems and robotics, emphasizing peer-to-peer learning, inclusive collaboration,
-                        and a "learning-by-doing" approach. </p>
-                    <p>We are ByteForge, a thriving student community which is committed to using technology to build and learn. Our goal is to give participants practical experience so they can develop their skills, work together on real-world projects, and get ready for careers in hardware and software engineering.
-                        We focus on everything from web development and artificial intelligence to embedded systems and robotics, emphasizing peer-to-peer learning, inclusive collaboration,
-                        and a "learning-by-doing" approach. </p>
+                <h2 style="color: white; text-align:center;">About ByteForge <br><span style="font-size:0.6em; color:var(--accent1);">Crafting the Future of Technology</span></h2>
+                
+                <div class="about-intro">
+                    <p>ByteForge is more than just a student club; it is a dedicated ecosystem for innovation established within the Raise Smart Pro (Rathinam Technical Campus). Born from the vision of bridging the widening gap between academic theory and industrial reality, ByteForge serves as a dynamic hub where technology is not just studied, but actively created.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-box">
+                        <h3><i class="fas fa-hammer"></i> Our Philosophy</h3>
+                        <p class="highlight-text">"Forging Every Byte of Code"</p>
+                        <p>Our motto is the heartbeat of our operations. It reflects our belief that coding is a craft that requires dedication, precision, and continuous refinement. At ByteForge, we do not believe in learning in isolation. We believe that knowledge grows when it is shared.</p>
+                    </div>
+
+                    <div class="about-box">
+                        <h3><i class="fas fa-rocket"></i> What We Do</h3>
+                        <ul class="feature-list">
+                            <li><strong>Innovation & Competition:</strong> Regular Hackathons and coding challenges simulating high-pressure industry environments.</li>
+                            <li><strong>Workshops & Seminars:</strong> "Moon-light Workshops" on AI, Full Stack, and Cyber Security to guide students from theory to practice.</li>
+                            <li><strong>Open Source & Mentorship:</strong> Developing a culture of peer-to-peer learning and open-source contribution.</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-box">
+                        <h3><i class="fas fa-user-graduate"></i> Developing Leaders</h3>
+                        <p>We aim to produce graduates who are not only technically excellent but also confident, articulate, and ready to lead. Through active participation in events and projects, members enhance their soft skills and leadership qualities.</p>
+                    </div>
+                </div>
+
+                <div class="about-footer">
+                    <h3>Join the Forge</h3>
+                    <p>The ByteForge Club is built on the pillars of collaboration, creativity, and technical excellence. Whether you are looking to master a new language or build a portfolio-worthy project, ByteForge is your home.</p>
+                    <p class="final-motto">Come build with us. Let’s forge the future, one byte at a time.</p>
                 </div>
             </div>
         </section>
@@ -256,23 +276,71 @@ try {
 
                 <div class="events-grid">
                     <?php
-                    $count = 0;
+                    // Sorting Logic based on explicit JSON 'status' field
+                    // Order: In Progress -> Upcoming -> Completed
+                    
+                    $in_progress = [];
+                    $upcoming = []; // Maps to "Not Yet Started"
+                    $completed = [];
+
                     foreach ($events as $e) {
-                        if ($count++ >= 3) break;
-                        $id = htmlspecialchars($e['id'] ?? '');
-                        $title = htmlspecialchars($e['title'] ?? '');
-                        $date = htmlspecialchars($e['date'] ?? '');
-                        $short = htmlspecialchars($e['short'] ?? '');
-                        $image = htmlspecialchars($e['image'] ?? 'assets/img/event.jpg');
-                        echo "<div class='event-card'>
-                    <img src='$image' alt='$title' style='width:100%; height:150px; object-fit:cover; border-radius:8px; margin-bottom:10px;'>
-                    <h3>$title</h3>
-                    <p class='muted'>$date</p>
-                    <p>$short</p>
-                    <a class='btn btn-small' href='events.php?id=" . urlencode($id) . "'>Register</a>
-                  </div>";
+                        // Default to 'Upcoming' if missing
+                        $status = strtolower($e['status'] ?? 'upcoming');
+                        
+                        if ($status === 'in progress' || $status === 'in_progress') {
+                             $in_progress[] = $e;
+                        } elseif ($status === 'completed') {
+                             $completed[] = $e;
+                        } else {
+                            $upcoming[] = $e;
+                        }
                     }
-                    if ($count === 0) echo "<p class='muted'>No events yet. Add events in <code>/data/events.json</code>.</p>";
+
+                    // Sort groups by date
+                    // In Progress: Earliest first
+                    usort($in_progress, function($a, $b) { return strtotime($a['date']) - strtotime($b['date']); });
+                    
+                    // Upcoming: Earliest first (Soonest)
+                    usort($upcoming, function($a, $b) { return strtotime($a['date']) - strtotime($b['date']); });
+                    
+                    // Completed: Latest first (Most recent)
+                    usort($completed, function($a, $b) { return strtotime($b['date']) - strtotime($a['date']); });
+
+                    // Merge: In Progress -> Upcoming (Completed hidden from Home Preview)
+                    $displayEvents = array_merge($in_progress, $upcoming);
+                    
+                    // Take top 3
+                    $latestEvents = array_slice($displayEvents, 0, 3);
+                    
+                    if (count($latestEvents) > 0) {
+                        foreach ($latestEvents as $e) {
+                            $id = htmlspecialchars($e['id'] ?? '');
+                            $title = htmlspecialchars($e['title'] ?? '');
+                            $date = htmlspecialchars($e['date'] ?? '');
+                            $short = htmlspecialchars($e['short'] ?? '');
+                            // Fallback image handling
+                            $imgSrc = htmlspecialchars($e['image'] ?? '');
+                            if (empty($imgSrc) || !file_exists($imgSrc)) {
+                                $imgSrc = 'assets/img/event.jpg'; // Default if missing
+                                // In a real scenario we'd check file_exists relative to root, simplified here
+                            }
+                            
+                            echo "
+                            <div class='event-card'>
+                                <div class='event-card-img'>
+                                    <img src='$imgSrc' alt='$title'>
+                                    <div class='event-date-badge'><i class='far fa-calendar-alt'></i> $date</div>
+                                </div>
+                                <div class='event-content'>
+                                    <h3>$title</h3>
+                                    <p>$short</p>
+                                    <a class='btn btn-small btn-primary' href='events.php?id=$id'>Register Now</a>
+                                </div>
+                            </div>";
+                        }
+                    } else {
+                        echo "<p class='muted'>No events yet. Stay tuned!</p>";
+                    }
                     ?>
                 </div>
             </div>
@@ -292,13 +360,21 @@ try {
             <div class="team-grid">
                 <?php foreach ($students as $member): ?>
                     <div class="team-card">
-                        <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
-                        <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
-                        <p><?= htmlspecialchars($member['role'] ?? '') ?></p>
-                        <p class="team-email"><a href="mailto:<?= htmlspecialchars($member['email'] ?? '') ?>"><?= htmlspecialchars($member['email'] ?? '') ?></a></p>
-                        <div class="team-links">
-                            <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                            <a href="<?= htmlspecialchars($member['github'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <div class="team-card-inner">
+                            <button class="team-close-btn" aria-label="Close details">&times;</button>
+                            <div class="team-img-col">
+                                <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
+                            </div>
+                            <div class="team-info-col">
+                                <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
+                                <p class="team-role"><?= htmlspecialchars($member['role'] ?? '') ?></p>
+                                <p class="team-desc"><?= htmlspecialchars($member['description'] ?? '') ?></p>
+                                <p class="team-email"><a href="mailto:<?= htmlspecialchars($member['email'] ?? '') ?>"><?= htmlspecialchars($member['email'] ?? '') ?></a></p>
+                                <div class="team-links">
+                                    <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                                    <a href="<?= htmlspecialchars($member['github'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -308,14 +384,22 @@ try {
              <div class="team-center">
                 <?php foreach ($faculty as $member): ?>
                     <div class="team-card">
-                        <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
-                        <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
-                        <p><?= htmlspecialchars($member['role'] ?? '') ?></p>
-                        <p class="team-email"><a href="mailto:<?= htmlspecialchars($member['email'] ?? '') ?>"><?= htmlspecialchars($member['email'] ?? '') ?></a></p>
-                        <div class="team-links">
-                            <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                            <a href="<?= htmlspecialchars($member['github'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                        </div>
+                        <div class="team-card-inner">
+                            <button class="team-close-btn" aria-label="Close details">&times;</button>
+                            <div class="team-img-col">
+                                <img src="<?= htmlspecialchars($member['image'] ?? 'assets/img/BFL.jpg') ?>" alt="<?= htmlspecialchars($member['name'] ?? 'Team Member') ?>">
+                            </div>
+                            <div class="team-info-col">
+                                <h3><?= htmlspecialchars($member['name'] ?? '') ?></h3>
+                                <p class="team-role"><?= htmlspecialchars($member['role'] ?? '') ?></p>
+                                <p class="team-desc"><?= htmlspecialchars($member['description'] ?? '') ?></p>
+                                <p class="team-email"><a href="mailto:<?= htmlspecialchars($member['email'] ?? '') ?>"><?= htmlspecialchars($member['email'] ?? '') ?></a></p>
+                                <div class="team-links">
+                                    <a href="<?= htmlspecialchars($member['linkedin'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                                    <a href="<?= htmlspecialchars($member['github'] ?? '#') ?>" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -380,7 +464,20 @@ try {
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text">BYTE FORGE</div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top -->
+    <div class="back-to-top-float">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="assets/js/main.js?v=1.6"></script>
 </body>
 
 </html>

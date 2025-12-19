@@ -5,7 +5,8 @@
     "image": "assets/img/president.jpg",
     "email": "arjumaanm.bcy24@rathinam.in",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "description": "Leading ByteForge with a vision to empower students through technology and collaborative learning."
   },
   {
     "name": "Nithin Raj",
@@ -13,7 +14,8 @@
     "image": "assets/img/leader1.jpg",
     "email": "nithin.raj@byteforge.com",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "description": "Dedicated to organizing impactful events and fostering a culture of continuous learning."
   },
   {
     "name": "Harini K",
@@ -21,7 +23,8 @@
     "image": "assets/img/leader1.jpg",
     "email": "harini.k@byteforge.com",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "description": "Ensuring smooth operations and effective communication within the ByteForge community."
   },
   {
     "name": "Dr. N.Jeyakkannan",
@@ -29,7 +32,8 @@
     "image": "assets/img/leader1.jpg",
     "email": "jeyakkannan.bio@rathinam.in",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "description": "Guiding the club with academic expertise and industry insights to shape future leaders."
   },
   {
     "name": "Sneha Priya",
@@ -37,6 +41,7 @@
     "image": "assets/img/leader1.jpg",
     "email": "sneha.priya@byteforge.com",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "description": "Coordinating mentorship programs and technical workshops to enhance student skills."
   }
 ]

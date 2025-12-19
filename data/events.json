@@ -1,32 +1,167 @@
 [
   {
     "id": "E001",
-    "title": "Intro to Web Dev Workshop",
-    "type": "workshop",
-    "date": "2025-11-21 10:00",
-    "short": "Learn HTML, CSS, and JS in this beginner-friendly workshop.",
-    "description": "A hands-on workshop covering fundamentals of modern web development. Bring your laptop.",
-    "capacity": 50,
-    "image": "assets/img/event.jpg"
+    "title": "Dim-Light & Moon-Light Workshop Series",
+    "type": "Technical Workshop",
+    "date": "January 3, 2026",
+    "status": "In Progress",
+    "short": "A recurring day & night workshop series covering different domains with hands-on mini projects.",
+    "description": "A recurring day & night workshop series covering different domains (Web Dev, AI, Cybersecurity, Cloud, etc.) with hands-on mini projects.",
+    "image": "assets/img/events/event_01.jpg",
+    "capacity": 60
   },
   {
     "id": "E002",
-    "title": "Campus Hackathon 48h",
-    "type": "hackathon",
-    "date": "2025-12-05 09:00",
-    "short": "Build and ship a project in 48 hours.",
-    "description": "Teams of up to 4 will build prototypes based on themes. Prizes for winners.",
-    "capacity": 200,
-    "image": "assets/img/event.jpg"
+    "title": "ByteForge HackFest 24hrs",
+    "type": "Hackathon",
+    "date": "January 10, 2026",
+    "status": "Upcoming",
+    "short": "A 24-hour hackathon where teams build tech solutions for real-world problems.",
+    "description": "A 24-hour or weekend hackathon where teams build tech solutions for real-world or campus-based problems. Winners can showcase their projects to faculty and local startups.",
+    "image": "assets/img/events/event_02.jpg",
+    "capacity": 200
   },
   {
     "id": "E003",
-    "title": "AI & ML Seminar",
-    "type": "seminar",
-    "date": "2025-11-28 15:00",
-    "short": "Guest talk on AI careers and projects.",
-    "description": "Industry guest presents on how to start AI projects and build portfolios.",
-    "capacity": 150,
-    "image": "assets/img/event.jpg"
+    "title": "Codesprint Challenge",
+    "type": "Coding Challenges",
+    "date": "January 22, 2026",
+    "status": "Upcoming",
+    "short": "A competitive coding contest with increasing difficulty rounds.",
+    "description": "A competitive coding contest with increasing difficulty rounds, focused on logic building, algorithms, and data structures. Top scorers become 'ByteForge Codemasters.'",
+    "image": "assets/img/events/event_03.jpg",
+    "capacity": 100
+  },
+  {
+    "id": "E004",
+    "title": "Capture the Flag (CTF)",
+    "type": "Technical Challenges",
+    "date": "January 31, 2026",
+    "status": "Upcoming",
+    "short": "An interactive cybersecurity event where participants solve hacking puzzles.",
+    "description": "An interactive cybersecurity event where participants solve hacking puzzles, decode clues, and secure systems ethically.",
+    "image": "assets/img/events/event_04.jpg",
+    "capacity": 80
+  },
+  {
+    "id": "E005",
+    "title": "Build-a-Startup Challenge",
+    "type": "Innovation & Entrepreneurship",
+    "date": "February 4, 2026",
+    "status": "Upcoming",
+    "short": "Teams pitch innovative product ideas and create prototypes.",
+    "description": "Teams pitch innovative product ideas, develop prototypes, and present them to a judging panel — merging tech with entrepreneurship.",
+    "image": "assets/img/events/event_05.jpg",
+    "capacity": 50
+  },
+  {
+    "id": "E006",
+    "title": "Open Source Contribution Drive",
+    "type": "Collaboration Event",
+    "date": "February 14, 2026",
+    "status": "Upcoming",
+    "short": "A 2-week guided event helping students contribute to GitHub open-source projects.",
+    "description": "A 2-week guided event helping students contribute to GitHub open-source projects with mentorship from senior members.",
+    "image": "assets/img/events/event_06.jpg",
+    "capacity": 100
+  },
+  {
+    "id": "E007",
+    "title": "TechTalk Thursdays",
+    "type": "Seminar",
+    "date": "February 26, 2026",
+    "status": "Upcoming",
+    "short": "Weekly/monthly mini-seminars on tech trends and career insights.",
+    "description": "Weekly or monthly mini-seminars featuring students or guest speakers discussing tech trends, career insights, or demoing personal projects.",
+    "image": "assets/img/events/event_07.jpg",
+    "capacity": 60
+  },
+  {
+    "id": "E008",
+    "title": "PeerForge Mentorship Program",
+    "type": "Mentorship",
+    "date": "February 21, 2026",
+    "status": "Upcoming",
+    "short": "Seniors guide juniors in learning paths like Python, Web Dev, and Data Science.",
+    "description": "A structured mentoring program where seniors guide juniors in learning paths (Python, Web Dev, Data Science, etc.) with goal-based tracking.",
+    "image": "assets/img/events/event_08.jpg",
+    "capacity": 40
+  },
+  {
+    "id": "E009",
+    "title": "Innovator's Hour",
+    "type": "Idea Presentation",
+    "date": "February 26, 2026",
+    "status": "Upcoming",
+    "short": "Members share project concepts and get live feedback.",
+    "description": "A 1-hour idea presentation slot where members share their project concepts or problem statements and get live feedback from the audience.",
+    "image": "assets/img/events/event_09.jpg",
+    "capacity": 50
+  },
+  {
+    "id": "E010",
+    "title": "SkillForge – Soft Skills Bootcamp",
+    "type": "Professional Development",
+    "date": "March 7, 2026",
+    "status": "Upcoming",
+    "short": "Focusing on public speaking, teamwork, and professional communication.",
+    "description": "An interactive session focusing on public speaking, teamwork, presentation skills, and professional communication for tech students.",
+    "image": "assets/img/events/event_10.jpg",
+    "capacity": 80
+  },
+  {
+    "id": "E011",
+    "title": "Tech-A-Thon (Project Expo)",
+    "type": "Exhibition",
+    "date": "March 14, 2026",
+    "status": "Upcoming",
+    "short": "Students display and demo their real-world projects.",
+    "description": "An exhibition where students display and demo their real-world projects to faculty, peers, and visitors. Best projects win awards.",
+    "image": "assets/img/events/event_11.jpg",
+    "capacity": 300
+  },
+  {
+    "id": "E012",
+    "title": "ByteForge Ignite",
+    "type": "Orientation",
+    "date": "March 21, 2026",
+    "status": "Upcoming",
+    "short": "Beginner-friendly orientation with fun activities and coding games.",
+    "description": "A beginner-friendly event introducing students to coding, GitHub, and the club’s culture - with fun activities and coding games.",
+    "image": "assets/img/events/event_12.jpg",
+    "capacity": 150
+  },
+  {
+    "id": "E013",
+    "title": "CollabConnect",
+    "type": "Inter-College Networking",
+    "date": "April 4, 2026",
+    "status": "Upcoming",
+    "short": "Inter-college meetup to exchange projects and build networks.",
+    "description": "An inter-college collaboration event to exchange projects, participate in joint hackathons, and build networking with other tech clubs.",
+    "image": "assets/img/events/event_13.jpg",
+    "capacity": 200
+  },
+  {
+    "id": "E014",
+    "title": "ByteForge Diaries",
+    "type": "Documentation",
+    "date": "April 10, 2026",
+    "status": "Upcoming",
+    "short": "Contest for detailed blogs or documentation of learning journeys.",
+    "description": "A writing event where students publish blogs or documentation about their learning, projects, or problem-solving journeys.",
+    "image": "assets/img/events/event_14.jpg",
+    "capacity": 100
+  },
+  {
+    "id": "E015",
+    "title": "Project Incubator Program",
+    "type": "Project Development",
+    "date": "May 3, 2026",
+    "status": "Upcoming",
+    "short": "Semester-long program to develop full-fledged projects under mentorship.",
+    "description": "A semester-long guided program where selected teams develop full-fledged projects under mentorship and present them at the end of the term.",
+    "image": "assets/img/events/event_15.jpg",
+    "capacity": 50
   }
 ]

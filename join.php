@@ -12,7 +12,7 @@ $config = require __DIR__ . '/config.php';
     <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 </head>
 
 <body>
@@ -123,7 +123,20 @@ $config = require __DIR__ . '/config.php';
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text">BYTE FORGE</div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top -->
+    <div class="back-to-top-float">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="assets/js/main.js?v=1.6"></script>
 </body>
 
 </html>
