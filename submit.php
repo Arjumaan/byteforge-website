@@ -200,8 +200,20 @@ if (!$stmt) json_exit(['status' => 'error', 'message' => 'DB Prepare Error: ' . 
 $types = str_repeat('s', count($dbVals));
 $stmt->bind_param($types, ...$dbVals);
 
-if (!$stmt->execute()) json_exit(['status' => 'error', 'message' => 'DB Execute Error: ' . $stmt->error]);
-$insert_id = $stmt->insert_id;
+try {
+    if (!$stmt->execute()) {
+        throw new Exception($stmt->error);
+    }
+    $insert_id = $stmt->insert_id;
+} catch (mysqli_sql_exception $e) {
+    if ($e->getCode() == 1062) {
+        json_exit(['status' => 'error', 'message' => 'Duplicate Registration: This Register Number is already registered.']);
+    } else {
+        json_exit(['status' => 'error', 'message' => 'DB Error: ' . $e->getMessage()]);
+    }
+} catch (Exception $e) {
+    json_exit(['status' => 'error', 'message' => 'Execution Error: ' . $e->getMessage()]);
+}
 $stmt->close();
 $mysqli->close();
 
@@ -219,6 +231,10 @@ class ByteForgePDF extends TCPDF
     public function DrawBorder()
     {
         $this->Rect(5, 5, 200, 287, 'D');
+    }
+    // OVERRIDE ERROR HANDLER TO PREVENT DIE()
+    public function Error($msg) {
+        throw new Exception("TCPDF Error: " . $msg);
     }
 }
 
@@ -541,8 +557,30 @@ if ($hasPHPMailer && file_exists($pdfPath)) {
         $mail->setFrom($mail->Username, 'ByteForge Club');
         $mail->addAddress($data['email_id'], $data['full_name']);
         $mail->isHTML(true);
-        $mail->Subject = 'Registration Successful - ByteForge Club';
-        $mail->Body    = "Dear <b>{$data['full_name']}</b>,<br><br>Thank you for registering!<br>Attached is your official registration form.<br><br>Regards,<br><b>ByteForge Team</b>";
+        $mail->Subject = 'Welcome to ByteForge! Registration Confirmed 🚀';
+        $mail->Body    = "
+        <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px;'>
+            <h2 style='color: #1FA0B5; border-bottom: 2px solid #eee; padding-bottom: 10px;'>Welcome to the ByteForge Community!</h2>
+            <p>Dear <b>{$data['full_name']}</b>,</p>
+            <p>Congratulations! Your registration for the <b>ByteForge Club</b> has been successfully processed. We are thrilled to welcome you to our community of innovators, developers, and creators.</p>
+            <p>We have received your details, and your official <b>Member Registration Form</b> is attached to this email for your records.</p>
+            
+            <div style='background: #f0f9fa; padding: 15px; border-left: 4px solid #1FA0B5; margin: 20px 0; border-radius: 4px;'>
+                <strong>Next Steps:</strong>
+                <ul style='margin-top: 5px; margin-bottom: 0; padding-left: 20px;'>
+                    <li>Stay tuned for updates on our upcoming orientation session.</li>
+                    <li>Connect with peers and mentors in our upcoming events.</li>
+                    <li>Get ready to forge your path in technology!</li>
+                </ul>
+            </div>
+
+            <p>If you have any questions or need assistance, feel free to reply to this email.</p>
+            <br>
+            <p>Warm Regards,</p>
+            <p><b>The ByteForge Team</b><br>
+            <a href='http://byteforge.com' style='color: #1FA0B5; text-decoration: none;'>www.byteforge.com</a><br>
+            <span style='color: #777; font-size: 12px;'><i>Forging every byte of code to creation</i></span></p>
+        </div>";
 
         $mail->addAttachment($pdfPath);
         $mail->send();

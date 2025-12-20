@@ -430,10 +430,14 @@ body {
 }
 
 .team-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-    padding: 18px;
+    background: transparent;
+    /* Removed conflicting background */
+    padding: 0;
+    /* Let inner card handle padding */
     border-radius: 12px;
-    text-align: center
+    text-align: center;
+    border: none;
+    /* Remove border if any */
 }
 
 .team-photo {
@@ -1001,12 +1005,14 @@ body {
     justify-content: flex-start;
     z-index: 10;
 
-    /* Gemini / Glassmorphism Style */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    /* Top highlight */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    /* Improved Premium Style - Cyan Theme */
+    background: linear-gradient(145deg, rgba(10, 30, 40, 0.8) 0%, rgba(15, 45, 60, 0.9) 100%);
+    border: 1px solid rgba(31, 160, 181, 0.15);
+    /* Cyan border */
+    border-top: 1px solid rgba(31, 160, 181, 0.3);
+    /* Top cyan highlight */
+    /* Cyan shadow glow */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(31, 160, 181, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -1018,7 +1024,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(122, 30, 216, 0.15), transparent 60%);
+    /* Rotating Cyan Glow */
+    background: radial-gradient(circle at center, rgba(31, 160, 181, 0.15), transparent 60%);
     z-index: -1;
     transform: rotate(0deg);
     animation: rotateGlow 10s linear infinite;
@@ -1100,8 +1107,8 @@ body {
     height: 130px;
     border-radius: 50%;
     margin-bottom: 1.2rem;
-    border: 2.5px solid rgba(162, 90, 255, 0.4);
-    box-shadow: 0 0 18px rgba(162, 90, 255, 0.4);
+    border: 2.5px solid rgba(31, 160, 181, 0.5);
+    box-shadow: 0 0 18px rgba(31, 160, 181, 0.4);
     object-fit: cover;
     transition: all 0.3s ease;
 }

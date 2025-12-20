@@ -35,50 +35,199 @@ $config = require __DIR__ . '/config.php';
     </header>
 
     <main>
-        <section id="join" class="section join">
+        <!-- Hero Section -->
+        <section class="page-hero" style="text-align: center; padding: 6rem 1rem 4rem;">
+            <h1 style="font-size: 3.5rem; color: #fff; margin-bottom: 20px;">Choose Your <span style="color: var(--accent1);">Battlefield</span></h1>
+            <p style="color: var(--muted); max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+                At ByteForge, we don't just write code; we build the future. Select the domains that ignite your passion and get ready to innovate.
+            </p>
+        </section>
+
+        <!-- Domains Grid -->
+        <section class="section domains">
             <div class="container">
-                <h2 style="color: white;">Join ByteForge</h2>
-                <p>Choose your domain of interest from the options below. After selecting, register
-                    in the registration form at the bottom to complete your application.</p>
-
-                <div class="domains-list">
-                    <h3>Technical Domains:</h3>
-                    <h4>Sector 1: Core Development & Innovation</h4>
-                    <ul>
-                        <li>Web Development</li>
-                        <li>App Development</li>
-                        <li>Artificial Intelligence / Machine Learning</li>
-                        <li>Data Science / Data Analytics</li>
-                        <li>Internet of Things (IoT)</li>
-                        <li>Competitive Programming / DSA</li>
-                        <li>Robotics & Automation</li>
-                        <li>UI/UX Design</li>
-                    </ul>
-
-                    <h4>Sector 2: Advanced Technology & Security</h4>
-                    <ul>
-                        <li>Cloud Computing</li>
-                        <li>Cybersecurity / Ethical Hacking</li>
-                        <li>Blockchain</li>
-                    </ul>
-
-                    <h3>Non-Technical Domains:</h3>
-                    <ul>
-                        <li>Video Editing</li>
-                        <li>Photo Editing</li>
-                        <li>Graphic Designing</li>
-                        <li>Content Writing / Creation</li>
-                        <li>Social Media Management</li>
-                        <li>Event Management</li>
-                        <li>Documentation & Reporting</li>
-                        <li>Hosting / Anchoring</li>
-                    </ul>
-                    <p>(You can choose multiple fields.)</p>
+                
+                <!-- Sector 1 -->
+                <div class="domain-group" style="margin-bottom: 60px;">
+                    <h2 class="sector-title"><i class="fas fa-code"></i> Core Development & Innovation</h2>
+                    <div class="domain-grid">
+                        <div class="domain-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Web Development</h3>
+                            <p>Master the art of full-stack engineering.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>App Development</h3>
+                            <p>Build the next big mobile experience.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI / ML</h3>
+                            <p>Teach machines to think and learn.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-database"></i>
+                            <h3>Data Science</h3>
+                            <p>Unlock insights from complex data.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-wifi"></i>
+                            <h3>IoT</h3>
+                            <p>Connect the physical world to the digital.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>DSA & Competitive</h3>
+                            <p>Crack algorithms and ace coding battles.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>Robotics</h3>
+                            <p>Design and program autonomous systems.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <h3>UI/UX Design</h3>
+                            <p>Craft beautiful, user-centric interfaces.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <a class="btn btn-primary" href="register.php">Register Here</a>
+                <!-- Sector 2 -->
+                <div class="domain-group" style="margin-bottom: 60px;">
+                    <h2 class="sector-title"><i class="fas fa-shield-alt"></i> Advanced Tech & Security</h2>
+                    <div class="domain-grid">
+                        <div class="domain-card">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud Computing</h3>
+                            <p>Architect scalable serverless solutions.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-user-secret"></i>
+                            <h3>Cybersecurity</h3>
+                            <p>Defend systems and hack responsibly.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fab fa-bitcoin"></i>
+                            <h3>Blockchain</h3>
+                            <p>Build decentralized web3 applications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Non-Tech -->
+                <div class="domain-group">
+                    <h2 class="sector-title"><i class="fas fa-paint-brush"></i> Creative & Management</h2>
+                    <div class="domain-grid">
+                        <div class="domain-card">
+                            <i class="fas fa-video"></i>
+                            <h3>Video Editing</h3>
+                            <p>Tell compelling stories through visual media.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-camera-retro"></i>
+                            <h3>Photography</h3>
+                            <p>Capture the moments that define us.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-pen-nib"></i>
+                            <h3>Content Creation</h3>
+                            <p>Write, blog, and influence the narrative.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-bullhorn"></i>
+                            <h3>Social Media</h3>
+                            <p>Manage the digital voice of ByteForge.</p>
+                        </div>
+                        <div class="domain-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>Event Management</h3>
+                            <p>Organize and lead tech summits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                 <div class="join-cta" style="margin-top: 80px; text-align: center; background: linear-gradient(135deg, rgba(31, 160, 181, 0.1), rgba(122, 30, 216, 0.1)); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h2 style="font-size: 2rem; margin-bottom: 20px;">Found Your Calling?</h2>
+                    <p style="color: #ccc; margin-bottom: 30px;">
+                        Once you've decided on your domain(s), the next step is simple. 
+                        Fill out the official registration form and attach your resume.
+                    </p>
+                    <a class="btn btn-primary" href="register.php" style="font-size: 1.2rem; padding: 15px 50px;">
+                        Proceed to Registration <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                    </a>
+                 </div>
+
             </div>
         </section>
+
+        <style>
+            .sector-title {
+                margin-top: 0;
+                margin-bottom: 30px;
+                color: var(--accent1);
+                font-size: 1.8rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 10px;
+                display: inline-block;
+            }
+            .domain-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+            .domain-card {
+                background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+                border: 1px solid rgba(255,255,255,0.05);
+                border-radius: 12px;
+                padding: 25px;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+                cursor: default;
+                position: relative;
+                overflow: hidden;
+            }
+            .domain-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                border-color: var(--accent1);
+            }
+            .domain-card i {
+                font-size: 2.5rem;
+                color: #fff;
+                margin-bottom: 15px;
+                display: block;
+                transition: color 0.3s ease;
+            }
+            .domain-card:hover i {
+                color: var(--accent1);
+            }
+            .domain-card h3 {
+                font-size: 1.2rem;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .domain-card p {
+                font-size: 0.9rem;
+                color: var(--muted);
+                line-height: 1.5;
+                margin: 0;
+            }
+            /* Add a subtle glow element */
+            .domain-card::after {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: radial-gradient(circle at center, rgba(31, 160, 181, 0.1), transparent 70%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .domain-card:hover::after {
+                opacity: 1;
+            }
+        </style>
     </main>
 
     <footer class="footer">

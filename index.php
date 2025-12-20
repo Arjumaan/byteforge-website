@@ -414,10 +414,28 @@ try {
         <!-- JOIN -->
         <section id="join" class="section join">
             <div class="container">
-                <h2 style="color: white;">To Join ByteForge</h2>
-                <p>View the list of domains in our club. Choose your domain and fill the registration form available in the next page.</p>
-                <p>The Registration form must be submitted with your resume to the club incharge.</p> <br>
-                <a class="btn btn-primary" href="join.php">Joining Process</a>
+                <div class="join-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">Ready to <span style="color: var(--accent1);">Forge Your Future?</span></h2>
+                    
+                    <p style="font-size: 1.15rem; color: var(--muted); line-height: 1.8; margin-bottom: 15px;">
+                        ByteForge is where passion meets purpose. Whether you are a code wizard, a design enthusiast, or a hardware tinkerer, there is a place for you here.
+                    </p>
+                    
+                    <p style="font-size: 1.1rem; color: #e2e8f0; margin-bottom: 30px;">
+                        Explore our diverse technical domains, find your niche, and start building projects that matter. 
+                        <strong>Don't just watch the innovation happen—be the one driving it.</strong>
+                    </p>
+
+                    <div class="join-steps" style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; text-align: left;">
+                         <!-- Optional: small visual steps or just keep it clean -->
+                    </div>
+
+                    <a class="btn btn-primary" href="join.php" style="padding: 15px 40px; font-size: 1.1rem;">Start Your Journey</a>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.4);">
+                        * Registration requires a valid resume for domain allocation.
+                    </p>
+                </div>
             </div>
         </section>
     </main>

@@ -10,24 +10,24 @@
 
     <style>
         :root {
-            /* DARK MODE VARS (ByteForge Theme) */
-            --primary-color: #7A1ED8; /* Purple primary */
-            --primary-hover: #9d4edd;
-            --accent-cyan: #1FA0B5;   /* ByteForge Cyan */
+            /* DARK MODE VARS (ByteForge Cyan Theme) */
+            --primary-color: #1FA0B5; /* Cyan primary */
+            --primary-hover: #2dd4ed;
+            --accent-cyan: #1FA0B5;
             
-            --bg-color: #0f0524;      /* Deep dark bg */
-            --surface-color: rgba(30, 41, 59, 0.7); /* Improved glass opacity for readability */
+            --bg-color: #070A13;      /* Deepest dark like index.php */
+            --surface-color: #0E1422; /* Solid dark panel color, faster than glass */
             
             --text-primary: #ffffff;
-            --text-secondary: #e2e8f0; /* Lighter secondary text for better contrast */
+            --text-secondary: #94a3b8; /* Cleaner slate grey */
             
-            --border-color: rgba(162, 90, 255, 0.3);
+            --border-color: rgba(31, 160, 181, 0.2); /* Cyan suble border */
             --focus-ring: rgba(31, 160, 181, 0.5);
             
             --success-color: #10b981;
             --error-color: #ef4444;
             
-            --primary-gradient: linear-gradient(135deg, #1FA0B5 0%, #7A1ED8 100%);
+            --primary-gradient: linear-gradient(135deg, #1FA0B5 0%, #0ea5e9 100%); /* Blue-Cyan gradient */
         }
 
         * {
@@ -39,25 +39,22 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(122, 30, 216, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(31, 160, 181, 0.2) 0%, transparent 40%);
+            background-image: radial-gradient(circle at top center, #1A1F35 0%, #070A13 80%); /* Matches index.php */
+            background-attachment: fixed;
             color: var(--text-primary);
             padding: 40px 20px;
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Container */
+        /* Container - Optimized for Performance (No Blur) */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: var(--surface-color);
+            background: var(--surface-color); /* Solid color instead of glass lag */
             padding: 50px;
             border-radius: 24px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             position: relative;
             z-index: 10;
         }
@@ -390,31 +387,11 @@
         .cursor-dot { width: 5px; height: 5px; background: var(--accent-cyan); z-index: 10000; }
         .cursor-outline { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.5); transition: transform 0.2s; }
         .cursor-hover { transform: translate(-50%, -50%) scale(1.5); background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); }
-        
-        /* Preloader */
-        #preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #050510; z-index: 99999; display: flex; justify-content: center; align-items: center;
-            transition: opacity 0.5s;
-        }
-        .loader-circle {
-            width: 50px; height: 50px; border: 3px solid rgba(162,90,255,0.2);
-            border-top-color: var(--accent-cyan); border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
     </style>
 
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="loader-circle"></div>
-            <div class="loader-text">BYTE FORGE</div>
-        </div>
-    </div>
 
     <div class="container">
         <!-- Home Button -->
@@ -1098,13 +1075,13 @@
                     <div class="form-group">
                         <label for="photograph" class="required">Passport Size Photograph</label>
                         <input type="file" id="photograph" name="photograph" accept="image/*" required>
-                        <p class="info-text">Upload JPG/PNG - Max 5MB</p>
+                        <p class="info-text">Upload only JPG Image - Max 5MB</p>
                         <div id="photoPreview" class="photo-preview"></div>
                     </div>
                     <div class="form-group">
                         <label for="resume" class="required">Resume / CV </label>
                         <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
-                        <p class="info-text">Upload PDF/DOC - Max 10MB</p>
+                        <p class="info-text">Upload only PDF Document - Max 10MB</p>
                     </div>
                 </div>
             </div>
@@ -1115,7 +1092,7 @@
                     <p class="declaration-text">
                         I hereby declare that the information provided above is true and accurate to the best of my knowledge.
                         I agree to actively participate in club activities and contribute to the growth of ByteForge.
-                    </p>
+                    </p><br><br>
                     <div class="form-group">
                         <div class="checkbox-item">
                             <input type="checkbox" id="declaration" name="declaration" required>
@@ -1253,6 +1230,7 @@
                     hideError();
 
                     // UX: Disable button
+                    // UX: Disable button (User requested removal of loading part)
                     const originalBtnText = submitBtn.innerHTML;
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '⏳ Processing...';
