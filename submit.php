@@ -172,7 +172,7 @@ if (isset($_FILES['resume']) && $_FILES['resume']['error'] === UPLOAD_ERR_OK) {
 }
 
 // 3. DATABASE
-$mysqli = new mysqli('localhost', 'root', '', 'byteforge');
+$mysqli = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
 if ($mysqli->connect_errno) json_exit(['status' => 'error', 'message' => 'DB Connect Error: ' . $mysqli->connect_error]);
 $mysqli->set_charset('utf8mb4');
 

@@ -1,13 +1,15 @@
 <?php
-// config.php - change admin_password before public use
+// config.php - Loaded from .env
+require_once __DIR__ . '/env_loader.php';
+
 return (object) [
     'admin_user' => 'admin',
-    'admin_password' => 'Admin123', // CHANGE THIS IMMEDIATELY FOR SECURITY! This password is used for admin panel access in admin/registrations.php.
+    'admin_password' => $_ENV['ADMIN_PASSWORD'] ?? 'Admin123',
     'site_email' => 'byteforge.groups@gmail.com',
     'assets_dir' => __DIR__ . '/assets',
     'data_dir' => __DIR__ . '/data',
-    'db_host' => 'localhost',
-    'db_name' => 'byteforge',
-    'db_user' => 'root',
-    'db_pass' => '',
+    'db_host' => $_ENV['DB_HOST'] ?? 'localhost',
+    'db_name' => $_ENV['DB_NAME'] ?? 'byteforge',
+    'db_user' => $_ENV['DB_USER'] ?? 'root',
+    'db_pass' => $_ENV['DB_PASS'] ?? '',
 ];

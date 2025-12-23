@@ -512,7 +512,7 @@ body {
     width: 180px;
     height: 180px;
     border-radius: 12px;
-    object-fit: contain;
+    object-fit: cover;
     padding: 15px;
     background: #fff;
     /* White card background as in Image 1 */
